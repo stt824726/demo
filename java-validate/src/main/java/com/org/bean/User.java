@@ -29,11 +29,14 @@ public class User<T> {
     @Pattern(regexp = "^1(3|4|5|6|7|8|9)\\d{9}$",message = "手机号格式不正确")
     private String phone;
 
-    @DecimalMin(value="100",message = "金额不能小于100")
-    private BigDecimal buyAmount;
+    @DecimalMin(value="100",message = "订单金额不能小于100")
+    private BigDecimal orderAmount;
 
     @Size(min = 6,max = 30,message = "地址长度应该在6-30字符之间")
     private String address;
+
+    @NotNull
+    private BigDecimal payAmount;
 
     @NotNull(message = "产品不能为空")
     @Valid

@@ -24,7 +24,8 @@ public class Validate {
         user.setPhone("1582");
         user.setBusineeDate(new Date());
         user.setBirthDay(new SimpleDateFormat("yyyyMMdd").parse("20291112"));
-        user.setBuyAmount(new BigDecimal("10"));
+        user.setOrderAmount(new BigDecimal("101"));
+        user.setPayAmount(new BigDecimal("102"));
 
         Goods goods = new Goods();
         goods.setName("机油");
