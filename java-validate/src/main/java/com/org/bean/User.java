@@ -32,6 +32,9 @@ public class User<T> {
     @DecimalMin(value="100",message = "金额不能小于100")
     private BigDecimal buyAmount;
 
+    @Size(min = 6,max = 30,message = "地址长度应该在6-30字符之间")
+    private String address;
+
     @NotNull(message = "产品不能为空")
     @Valid
     private List<Goods> goods;
