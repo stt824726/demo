@@ -1,5 +1,6 @@
 package com.org.bean;
 
+import com.org.constraints.InIntArr;
 import lombok.Data;
 
 import javax.validation.Valid;
@@ -9,7 +10,9 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class User<T> {
+public class Customer<T> {
+
+    private Integer id;
 
     @NotBlank
     private String name;
@@ -38,11 +41,16 @@ public class User<T> {
     @NotNull
     private BigDecimal payAmount;
 
+    @InIntArr(value={0,1},message = "状态必须为0,1")
+    private Integer status;
+
     @NotNull(message = "产品不能为空")
     @Valid
     private List<Goods> goods;
 
     @Valid
     private List<T> coupons;
+
+
 
 }

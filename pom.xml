@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>java-validate</module>
+      <module>customize-validate</module>
   </modules>
 
   <name>demo</name>
