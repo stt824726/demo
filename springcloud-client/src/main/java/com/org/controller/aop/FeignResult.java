@@ -32,13 +32,6 @@ public class FeignResult<T> implements Serializable {
         this.result = code;
     }
     
-    public FeignResult(FeignResultCode feignResultCode) {
-        super();
-        this.code = feignResultCode.getCode();
-        this.desc = feignResultCode.getDesc();
-        this.result = feignResultCode.getCode();
-    }
-    
     public static <T> FeignResult<T> success(T data) {
         FeignResult<T> feignResult = new FeignResult<T>();
         feignResult.setCode(SUCCESS_CODE);
