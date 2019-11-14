@@ -11,8 +11,6 @@ import java.util.Date;
 @Data
 public class Customer<T> {
 
-    private Integer id;
-
     @NotBlank
     private String name;
 
@@ -39,5 +37,9 @@ public class Customer<T> {
 
     @NotNull
     private BigDecimal payAmount;
+
+    @Null(groups = OnCreate.class)
+    @NotNull(groups = OnUpdate.class)
+    private Long id;
 
 }

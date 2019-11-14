@@ -1,6 +1,8 @@
 package com.org.controller;
 
 import com.org.controller.vo.Customer;
+import com.org.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
@@ -14,6 +16,9 @@ import java.util.List;
 @RestController
 @Validated
 public class HelloControler {
+
+    @Autowired
+    private CustomerService customerService;
 
     @PostMapping(value = "/customer")
     @ResponseBody
@@ -40,5 +45,15 @@ public class HelloControler {
     @ResponseBody
     public String customer3(@PathVariable("id") @Min(5) int id,@RequestParam("param") @Min(5) int param){
         return "success";
+    }
+
+
+    @PostMapping(value = "/customer4")
+    @ResponseBody
+    public String customer4(){
+        Customer customer = new Customer();
+        customer.setName("aa");
+        customer.setAge(10);
+        return customerService.custome(customer);
     }
 }
