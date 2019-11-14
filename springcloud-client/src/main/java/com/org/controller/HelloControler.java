@@ -4,12 +4,15 @@ import com.org.controller.vo.Customer;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
+@Validated
 public class HelloControler {
 
     @PostMapping(value = "/customer")
@@ -31,5 +34,11 @@ public class HelloControler {
             }
         }
         return stringBuffer!=null?stringBuffer.toString():"";
+    }
+
+    @PostMapping(value = "/customer3/{id}")
+    @ResponseBody
+    public String customer3(@PathVariable("id") @Min(5) int id,@RequestParam("param") @Min(5) int param){
+        return "success";
     }
 }
