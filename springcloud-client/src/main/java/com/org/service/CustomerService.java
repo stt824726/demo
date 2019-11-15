@@ -17,12 +17,12 @@ public class CustomerService {
     }
 
     @Validated(OnCreate.class)
-    public String addGroup(@Valid Customer customer){
+    public String addGroup(@Validated({OnCreate.class}) Customer customer){
         return "custome" ;
     }
 
     @Validated(OnUpdate.class)
-    public String updateGroup(@Valid Customer customer){
+    public String updateGroup(@Validated({OnUpdate.class}) Customer customer){
         return "custome" ;
     }
 }

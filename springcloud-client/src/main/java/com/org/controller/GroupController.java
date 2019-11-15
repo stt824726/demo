@@ -33,4 +33,22 @@ public class GroupController {
     public String updateGroup(@RequestBody @Validated({OnUpdate.class}) Customer customer){
         return "updateGroup";
     }
+
+
+    @PostMapping(value = "/addGroupMethod")
+    @ResponseBody
+    public String addGroupMethod(){
+        Customer customer = new Customer();
+        customer.setId(1L);
+        return customerService.addGroup(customer);
+    }
+
+
+    @PostMapping(value = "/updateGroupMethod")
+    @ResponseBody
+    public String updateGroupMethod(){
+        Customer customer = new Customer();
+        customer.setId(1L);
+        return customerService.updateGroup(customer);
+    }
 }
