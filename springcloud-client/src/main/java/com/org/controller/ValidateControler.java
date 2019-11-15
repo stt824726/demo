@@ -14,8 +14,7 @@ import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
-@Validated
-public class HelloControler {
+public class ValidateControler {
 
     @Autowired
     private CustomerService customerService;
@@ -41,19 +40,4 @@ public class HelloControler {
         return stringBuffer!=null?stringBuffer.toString():"";
     }
 
-    @PostMapping(value = "/customer3/{id}")
-    @ResponseBody
-    public String customer3(@PathVariable("id") @Min(5) int id,@RequestParam("param") @Min(5) int param){
-        return "success";
-    }
-
-
-    @PostMapping(value = "/customer4")
-    @ResponseBody
-    public String customer4(){
-        Customer customer = new Customer();
-        customer.setName("aa");
-        customer.setAge(10);
-        return customerService.custome(customer);
-    }
 }

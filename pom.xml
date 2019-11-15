@@ -12,6 +12,7 @@
       <module>java-validate</module>
       <module>springcloud-erarake</module>
     <module>springcloud-client</module>
+      <module>springcloud-feign</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
