@@ -1,11 +1,8 @@
 package com.org.controller;
 
 import com.org.controller.vo.Customer;
-import com.org.controller.vo.OnCreate;
-import com.org.controller.vo.OnUpdate;
 import com.org.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -14,27 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@Validated
-public class GroupController {
-
+public class MethodValidateController {
 
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(value = "/addGroupMethod")
+    @PostMapping(value = "/methodValidate")
     @ResponseBody
-    public String addGroupMethod(){
+    public String methodValidate(){
         Customer customer = new Customer();
         customer.setId(1L);
-        return customerService.addGroup(customer);
-    }
-
-
-    @PostMapping(value = "/updateGroupMethod")
-    @ResponseBody
-    public String updateGroupMethod(){
-        Customer customer = new Customer();
-        customer.setId(1L);
-        return customerService.updateGroup(customer);
+        customerService.custome(customer);
+        return "success";
     }
 }

@@ -19,14 +19,14 @@ public class ValidateControler {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping(value = "/customer")
+    @PostMapping(value = "/valid")
     @ResponseBody
     public String customer(@RequestBody @Valid Customer customer){
         return "success";
     }
 
 
-    @PostMapping(value = "/customer2")
+    @PostMapping(value = "/valid2")
     @ResponseBody
     public String customer2(@RequestBody @Valid Customer customer, BindingResult bindingResult){
         StringBuffer stringBuffer = new StringBuffer();
@@ -40,4 +40,10 @@ public class ValidateControler {
         return stringBuffer!=null?stringBuffer.toString():"";
     }
 
+
+    @PostMapping(value = "/valid3")
+    @ResponseBody
+    public String customer3(@RequestBody @Validated Customer customer){
+        return "success";
+    }
 }
