@@ -17,7 +17,7 @@ public class CustomerService {
     }
 
     @Validated(OnCreate.class)
-    public String addGroup(@Validated({OnCreate.class}) Customer customer){
+    public String addGroup(@Valid Customer customer){
         return "custome" ;
     }
 
